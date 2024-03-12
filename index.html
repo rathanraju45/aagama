@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khojki&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
+    <!-- <style>
         body {
             margin: 0;
             font-family: 'Varela Round', sans-serif;
@@ -92,7 +92,7 @@
                 z-index: 1100;
             }
         }
-    </style>
+    </style> -->
 
 </head>
 <body>
@@ -136,14 +136,14 @@
         }
     </style>
     <header>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
+        
     </header>
     <nav>
         <ul>
             <li>
                 <div class="button" data-text="MICT" a>
                     <!--<span class="front-text">&nbsp;MICT&nbsp;</span>-->
+                    <div class="menu-toggle" onclick="toggleMenu()">+</div>
                     <span aria-hidden="true" class="front-text">&nbsp;MICT&nbsp;</span>
                 </div>
             </li>
@@ -478,5 +478,15 @@ document.addEventListener('DOMContentLoaded', function () {
     var frontText = document.querySelector('.front-text');
     frontText.classList.add('active');
 });
+
+const nav_icon = document.getElementById("ham-icon");
+nav_icon.innerHTML = "+";
+nav_icon.addEventListener("click",() => {
+    if(nav_icon.classList.contains("plus")){
+        nav_icon.classList.add("plus");
+    } else{
+        nav_icon.classList.remove("plus");
+    };
+})
 </script>
 </html>
