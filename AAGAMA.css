@@ -178,7 +178,7 @@ nav a {
 
 @media screen and (max-width: 768px) {
     #Social-Media {
-        scroll-margin-top: -350px;
+        scroll-margin-top: 69px;
     }
 
     #Events {
@@ -233,7 +233,45 @@ nav a {
         text-align: center;
         background-color: #000000;
     }
-
+    .btn-shine {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 12px 48px;
+        color: #000;
+        background: linear-gradient(to right, #FFFF00 1%, #FF8C00 10%, #FFFF00 20%);
+        background-position: 0;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shine 4s infinite linear;
+        animation-fill-mode: forwards;
+        -webkit-text-size-adjust: none;
+        font-weight: 600;
+        font-size: 3em; /* Adjust the font size as needed */
+    
+        @media (max-width: 600px) {
+            font-size: 2em; /* Adjust the font size for mobile view */
+            padding: 8px 16px; /* Adjust the padding for mobile view */
+            top: 5%; /* Adjust the top position for mobile view */
+            transform: translate(-50%, 0); /* Center horizontally and position at the top */
+        }
+    }
+    
+    @keyframes shine {
+        0% {
+            background-position: 0;
+        }
+    
+        60% {
+            background-position: 375px;
+        }
+    
+        100% {
+            background-position: 625px;
+        }
+    }
+    
+    
     * {
         margin: 0;
         padding: 0;
@@ -255,8 +293,6 @@ nav a {
         -webkit-text-stroke: 1px var(--stroke-color);
         cursor: pointer;
     }
-
-
     .front-text {
         position: absolute;
         top: 0;
@@ -1191,7 +1227,7 @@ a {
     }
 
     #Social-Media {
-        scroll-margin-top: -350px;
+        scroll-margin-top: -10px;
     }
 
     #Events {
@@ -1209,59 +1245,6 @@ a {
     #Home {
         scroll-margin-top: 100px;
     }
-
-    /*.button {
-    text-align: center;
-    top: 35%;
-    position: relative;
-    border: none;
-    background: transparent;
-    --stroke-color: #000000;
-    --ani-color: rgba(95, 3, 244, 0);
-    --color-gar: linear-gradient(90deg,#1814ff,#f441a5,#ffff2a,#03a9f4);
-    letter-spacing: 3px;
-    font-size: 4em;
-    font-family: "Pacifico";
-    text-transform: uppercase;
-    color: transparent;
-    justify-content: center;
-    margin: 60px;
-    -webkit-text-stroke: 1px var(--stroke-color);
-    cursor: pointer;
-}
-
-.front-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    justify-content: center;
-    align-items: center;
-    background: var(--color-gar);
-    -webkit-background-clip: text;
-    background-clip: text;
-    background-size: 200%;
-    overflow: hidden;
-    transition: all 1s;
-    animation: 8s ani infinite;
-    border-bottom: 2px solid transparent;
-}
-
-.button:hover .front-text {
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    top: 0;
-    left: 0;
-    border-bottom: 2px solid #000000;
-    -webkit-text-stroke: 1px var(--ani-color);
-}
-
-.button:hover .p {
-    width: 100%;
-    border-bottom: 2px solid #000000;
-    -webkit-text-stroke: 1px var(--ani-color);
-}*/
 
     @keyframes ani {
         0% {
@@ -1307,13 +1290,6 @@ a {
         margin-left: 43%;
         margin-bottom: 30px;
     }
-
-        /*.cardmic img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            object-fit: cover;
-        }*/
         .cardmic img {
             width: 100%;
             height: auto;
@@ -1408,66 +1384,26 @@ a {
         text-decoration: none;
         white-space: nowrap;
         font-family: "Poppins", sans-serif;
-
+    
         @media (max-width: 600px) {
-            font-size: 5em;
+            font-size: 2em;
             white-space: normal;
             padding: 0px 0px;
+            top: 50%; /* Adjust vertical position for mobile view */
         }
     }
-
-    @-moz-keyframes shine {
-        0% {
-            background-position: 0;
-        }
-
-        60% {
-            background-position: 375px;
-        }
-
-        100% {
-            background-position: 625px;
-        }
-    }
-
-    @-webkit-keyframes shine {
-        0% {
-            background-position: 0;
-        }
-
-        60% {
-            background-position: 375px;
-        }
-
-        100% {
-            background-position: 625px;
-        }
-    }
-
-    @-o-keyframes shine {
-        0% {
-            background-position: 0;
-        }
-
-        60% {
-            background-position: 375px;
-        }
-
-        100% {
-            background-position: 625px;
-        }
-    }
-
+    
     @keyframes shine {
         0% {
             background-position: 0;
         }
-
+    
         60% {
             background-position: 375px;
         }
-
+    
         100% {
             background-position: 625px;
         }
     }
+    
