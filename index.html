@@ -14,85 +14,144 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khojki&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <style>
+    <style>
         body {
-            margin: 0;
-            font-family: 'Varela Round', sans-serif;
-        }
+    margin: 0;
+    font-family: 'Varela Round', sans-serif;
+}
 
-        header {
-            background-color: #000000;
-            padding: 0px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            display: flex;
-            margin-top: 0%;
-            margin-block: 0px;
-            justify-content: space-between;
-            align-items: center;
-        }
+header {
+    background-color: #000000;
+    padding: 0px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    margin-top: 0%;
+    margin-block: 0px;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
-            nav ul li {
-                display: inline-block;
-            }
+nav ul li {
+    display: inline-block;
+    width: 100%;
+}
 
-        nav a {
-            text-decoration: none;
-            color: white;
-            padding: 10px;
-            display: block;
-        }
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+}
 
-        .menu-toggle {
-            cursor: pointer;
-            font-size: 1.5em;
-            color: white;
-        }
+.menu-toggle {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: white;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1200;
+}
+@media screen and (max-width: 768px) {
+    header {
+        position: fixed;
+        z-index: 1200;
+        text-align: center;
+        background-color: #000000;
+        padding: 10px;
+        width: 100%;
+    }
 
-        @media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; 
+        left: -15p;
+        width: 100%;
+        background-color: #000000;
+        margin: 0;
+        z-index: 1100;
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+    }
 
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 50px;
-                right: 0;
-                width: 100%;
-                background-color: #000000;
-                margin: 0px;
-            }
+    nav ul.show {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; 
+        color: #000000;
+        position: relative;
+        z-index: 1200;
+    }
 
-                nav ul.show {
-                    display: flex;
-                    color: #000000;
-                }
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 2em;
+        line-height: 1;
+        color: white;
+        z-index: 1300;
+        position: relative;
+        top: 10px;
+        right: 10px;
+    }
 
-                nav ul li {
-                    width: 100%;
-                    text-align: center;
-                    color: #000000;
-                }
+    nav a {
+        text-align: center;
+        background-color: #000000;
+        padding: 15px;
+        display: block;
+        position: relative;
+        z-index: 1200;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
-            .menu-toggle {
-                display: block;
-                cursor: pointer;
-                font-size: 1.5em;
-                color: white;
-                z-index: 1100;
-            }
-        }
-    </style> -->
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        color: white;
+        margin: 0;
+    }
+
+    .front-text {
+        margin-top: -50px;
+        font-size: 1.5em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1200;
+        color: white;
+    }
+
+    .mict {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        color:yellow;
+        font-size: 1.8em;
+        text-align: center;
+    }
+}
+
+
+ </style>
 
 </head>
 <body>
@@ -133,18 +192,19 @@
                 width: 100%;
                 left: -15%;
             }
+            
         }
     </style>
     <header>
-        
+        <div class="mict">MICT</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </header>
+    
     <nav>
         <ul>
             <li>
                 <div class="button" data-text="MICT" a>
-                    <!--<span class="front-text">&nbsp;MICT&nbsp;</span>-->
-                    <div class="menu-toggle" onclick="toggleMenu()">+</div>
-                    <span aria-hidden="true" class="front-text">&nbsp;MICT&nbsp;</span>
+                     <span aria-hidden="true" class="front-text">&nbsp;MICT&nbsp;</span>
                 </div>
             </li>
             <li>
@@ -201,7 +261,6 @@
     </nav>
     <!--HOME-->
     <section id="Home">
-
         <div class="clgimage">
             <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihY-LX8FB0daMuSvjlm9fkxhjxwWQTsbBoFMOSIpb81_NCoADwK9qoyQST2Who_UXLuIhEJKguyXoK8nU6guwcyKwVlS9w=s1600" alt="Description of the image" />
             <a href="#" class="btn-shine">AAGAMA 2024</a>
@@ -234,35 +293,35 @@
                 <span></span>
                 <div class="content">
                     <h2>WEB WIZARDS</h2>
-                    <a href="https://drive.google.com/file/d/1xmmbcmNtCtmo-LMFg7bnhSb8cTxUHLJT/view?usp=drivesdk" target="_blank">Read More</a>
+                    <a href="https://drive.google.com/file/d/16RZ-WpvekG4oegliGhd9Qdgao5WLMUYY/view" target="_blank">Read More</a>
                 </div>
             </div>
             <div class="box">
                 <span></span>
                 <div class="content">
                     <h2>PROMPTED PIXELS</h2>
-                    <a href="https://drive.google.com/file/d/1xjZGjpWXlpZOMEbNxDwESw32ghZIXhhO/view?usp=drivesdk" target="_blank">Read More</a>
+                    <a href="https://drive.google.com/file/d/16T4l5h2GFHgURvFsEduGF9jiV9ZyWJQx/view" target="_blank">Read More</a>
                 </div>
             </div>
             <div class="box">
                 <span></span>
                 <div class="content">
                     <h2>MR&MS DESIGNER</h2>
-                    <a href="https://drive.google.com/file/d/1xdM8bX1jmzt2wsbfrP3djRuVNGuuKbCJ/view?usp=drivesdk" target="_blank">Read More</a>
+                    <a href="https://drive.google.com/file/d/16HA5P7aZflgQvMI1wbBkuRR1cBOM45fp/view" target="_blank">Read More</a>
                 </div>
             </div>
             <div class="box">
                 <span></span>
                 <div class="content">
                     <h2>VIKSHIT WITH INNOVATION</h2>
-                    <a href="https://drive.google.com/file/d/1xjfKfCjtMficFMXc3-VtL7jlC6lgBzkg/view?usp=drivesdk" target="_blank">Read More</a>
+                    <a href="https://drive.google.com/file/d/16Y_yZEJXwKLYXASTBZ9A7hCnqyiBPEsT/view?usp=drive_open" target="_blank">Read More</a>
                 </div>
             </div>
             <div class="box">
                 <span></span>
                 <div class="content">
                     <h2>CIRCUIT CIRCUS</h2>
-                    <a href="https://drive.google.com/file/d/1xRvxlnjIWa18fgXDoJszZ2gtKITi9sV3/view?usp=drivesdk" target="_blank">Read More</a>
+                    <a href="https://drive.google.com/file/d/16Zptmnxkg9Fy7YA2zt0_J9EVJpAqUn7D/view" target="_blank">Read More</a>
                 </div>
             </div>
             <div class="box">
@@ -276,19 +335,19 @@
                 <span></span>
                 <div class="content">
                     <h2>TECHIE TALKY</h2>
-                    <a href="https://drive.google.com/file/d/1xhsB-TpQVErCWdWbxkKpFpybxV20wA04/view?usp=drivesdk" target="_blank">Read More</a>
+                    <a href="https://drive.google.com/file/d/16cJu8xmBl2CRdqrvsS0DMQp0Lh2bwrz8/view" target="_blank">Read More</a>
                 </div>
             </div>
 
         </div>
     </section>
+    <!--Registration-->
     <section id="Registration">
         <button class="ui-btn1" onclick="openGoogleForm()"></button>
     </section>
     <!--SOCIAL-MEDIA-->
     <section id="Social-Media">
         <canvas id="test"></canvas>
-
         <div class="par">
             <div class="ki">
                 <a href="https://x.com/DVR_DrHS_MIC?t=mdrpP9M6RZNMlorseuZgDg&s=09" target="_blank" class="buttonbtn-1">
@@ -332,6 +391,7 @@
             </div>
         </div>
     </section>
+    <!--Contact-->
     <section id="Contact">
         <div class="row">
             <div class="college">
@@ -360,7 +420,7 @@
                 </div>
             </div>
         </div>
-
+    <!--Venue-->
     </section>
     <section id="Venue">
         <div class="row">
@@ -460,8 +520,6 @@
         }
     });
 </script>
-
-
 <script>
     function toggleImageText() {
         var imageText = document.getElementById("imageText");
@@ -473,20 +531,9 @@
     }
 </script>
 <script>
-// Add the 'active' class to .front-text to apply the effect at all times
 document.addEventListener('DOMContentLoaded', function () {
     var frontText = document.querySelector('.front-text');
     frontText.classList.add('active');
 });
-
-const nav_icon = document.getElementById("ham-icon");
-nav_icon.innerHTML = "+";
-nav_icon.addEventListener("click",() => {
-    if(nav_icon.classList.contains("plus")){
-        nav_icon.classList.add("plus");
-    } else{
-        nav_icon.classList.remove("plus");
-    };
-})
 </script>
 </html>
